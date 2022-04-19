@@ -2,11 +2,16 @@
 - HTTP Browser method using FlareSolverr
 - I will update this method if it uses outdated dependencies -NekoLoliOwO
 
+# Changelog:
+- Updated FlareSolverr from v2.2.2 to v2.2.4 (LATEST RELEASE)
+
 # Requirements:
 - NodeJS 16.x
 
 # Installation
-- Execute the installation script: sh install.sh
+- Clone the repository using git clone https://github.com/NekoLoliOwO/http-browser.git
+- Execute the installation script for Ubuntu: sudo sh install.sh
+- Install gtk3-devel for centos: sudo yum install gtk3-devel
 
 # Install dependencies
 - npm i request
@@ -16,7 +21,6 @@
 - npm i minimist
 
 # Install FlareSolverr (This can take some minutes):
-- Unzip solvers.zip
 - cd solvers/flaresolver01; export PUPPETEER_PRODUCT=firefox; npm install; npm run
 - cd ../; cd flaresolver02; export PUPPETEER_PRODUCT=firefox; npm install; npm run
 - cd ../; cd flaresolver03; export PUPPETEER_PRODUCT=firefox; npm install; npm run
