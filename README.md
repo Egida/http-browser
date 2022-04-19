@@ -10,8 +10,8 @@
 
 # Installation
 - Clone the repository using git clone https://github.com/NekoLoliOwO/http-browser.git
-- Execute the installation script for Ubuntu: sudo sh install.sh
-- Install gtk3-devel for centos: sudo yum install gtk3-devel
+- Execute the installation script for debian based systems: sudo sh ubuntu-debian.sh
+- Execute the installation script for centos based systems: sudo yum install centos.sh
 
 # Install dependencies
 - npm i request
