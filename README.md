@@ -40,7 +40,7 @@
 
 # Usage
 
-- Run the solvers using: python3 start_solvers.py
+- Run the solvers using: chmod 777 start_solver.sh; ./start_solvers.sh
 - Run the method using: node beta.js "https://website.com" 600 64 GET --mode browser --geo all --conn 32
 
 # Information
