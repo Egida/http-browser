@@ -1,5 +1,6 @@
-# HTTP BROWSER
+# HTTP BROWSER (updated)
 HTTP Browser method using FlareSolverr
+I will update this method if it uses outdated dependencies -NekoLoliOwO
 
 # Requirements:
 - NodeJS 16.x
