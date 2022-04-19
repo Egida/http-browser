@@ -1,1 +1,1 @@
-module.exports = { x: require('./x').Defaults }
+module.exports = { x: require("./x").Defaults };

@@ -189,7 +189,7 @@ var launch_browser = async function launch_browser(Extra = {}) {
     );
     ListIDS.push(IdBrowser);
     return;
-  } else if (resposense == "bad") {
+  } else if (resposense == "error") {
     log(
       "[error] [" +
         IdBrowser +
