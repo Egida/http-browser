@@ -45,5 +45,5 @@
 
 # Information
 
-- This method is the HTTP-BROWSER from booter.sx upgraded to HTTP/2.0 by forky & WeAreRainBowHAT
+- This method is the HTTP-BROWSER from booter.sx upgraded to HTTP/2.0 by forky & WeAreRainBowHAT(skids)
 - Booter.sx hacked by T13R and forky
